@@ -1,0 +1,21 @@
+extends layout
+
+block content
+  p.spacer= subTitle
+  div.divTable
+    div.divTableBody
+      div.divTableRow
+        div.divTableCell.divMenu
+          h2 Car List
+          div.list-group
+            each val in itemList
+              if val.id == id
+                button.btnMenuCar.list-group-item.list-group-item-action.active(value=val.id, type="button")=val.carName
+              else 
+                button.btnMenuCar.list-group-item.list-group-item-action(value=val.id, type="button")=val.carName
+        div.divTableCell.divDetail
+          h4=carName
+          div.d-flex.flex-row
+            button#btnVote.p-2.btn.btn-outline-primary.btn-sm(type="button", value=id) Vote
+            span#vote.p-2=vote
+          img.car-image(src=carImage alt=carName)
