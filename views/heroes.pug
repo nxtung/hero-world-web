@@ -1,0 +1,10 @@
+extends layout
+
+block content
+  p.spacer= subTitle
+  div.col
+    each val in heroList
+      div.row
+        span.badge.badge-primary=val.id
+        span.col=val.name
+      br

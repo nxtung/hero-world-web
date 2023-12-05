@@ -1,0 +1,19 @@
+extends layout
+
+block content
+  p.spacer= subTitle
+  div.divTable
+    div.divTableBody
+      div.divTableRow
+        div.divTableCell.divMenu
+          h2 Car List
+          ul.list-group
+            each val in itemList
+              if val.id == 1
+                li.list-group-item.active(value=val.id)= val.carName
+              else 
+                li.list-group-item(value=val.id)= val.carName
+        div.divTableCell.divDetail
+          h4=carName
+          h5='Vote: ' + vote
+          img.car-image(src=carImage alt=carName)

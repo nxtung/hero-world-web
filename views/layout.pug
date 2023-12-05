@@ -1,0 +1,52 @@
+doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet' href='/stylesheets/style.css')
+    link(rel='stylesheet' href='/stylesheets/herocar.css')
+    link(rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous")
+    link(rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css")
+    script(src='https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js')
+    script(src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous")
+    script(src='/javascripts/herocar.js')
+  body#body-pd
+    header#header.header
+      .header_toggle
+        i#header-toggle.bx.bx-menu
+        span.fs-4= title
+      .header_img
+        img(src='images/default.jpeg' alt='')
+    #nav-bar.l-navbar
+      nav.nav
+        div
+          a.nav_logo(href='#')
+            i.bx.bxs-planet.nav_logo-icon
+            span.nav_logo-name Hero's World
+          .nav_list
+            a.nav_link.active(href='/')
+              i.bx.bxs-dashboard.nav_icon
+              span.nav_name Dashboard
+            a.nav_link(href='/heroes')
+              i.bx.bx-user.nav_icon
+              span.nav_name Users
+            a.nav_link(href='/cars')
+              i.bx.bxs-car.nav_icon
+              span.nav_name Car 
+            a.nav_link(href='#')
+              i.bx.bx-bookmark.nav_icon
+              span.nav_name Bookmark
+            a.nav_link(href='#')
+              i.bx.bx-folder.nav_icon
+              span.nav_name Files
+            a.nav_link(href='#')
+              i.bx.bx-bar-chart-alt-2.nav_icon
+              span.nav_name Stats
+        a.nav_link(href='#')
+          i.bx.bx-log-out.nav_icon
+          span.nav_name SignOut
+    //- Content start
+    div.h-auto.bg-light
+      block content
+    //- Content end
+    //- Ref at: https://bbbootstrap.com/snippets/bootstrap-5-sidebar-menu-toggle-button-34132202#
+
