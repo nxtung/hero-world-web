@@ -12,12 +12,12 @@ router.get('/', async function (req, res, next) {
   if (foundId === undefined) id = 1;
   res.render('cars',
     {
-      id: id,
+      id: carList[id-1].id,
       title: 'Hero Cars',
       subTitle: 'Hero drives a car!',
       itemList: carList,
-      carImage: carList[id - 1].carImage,
-      carName: carList[id - 1].carName,
+      image: 'http://localhost:3232/images/cars/'+carList[id - 1].image,
+      name: carList[id - 1].name,
       vote: carList[id - 1].vote
     });
 });

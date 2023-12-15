@@ -38,7 +38,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
     jQuery(document).ready(function ($) {
         $('#btnVote').click(function (event) {
-            // event.preventDefault();
+            event.preventDefault();
             clickToVote("#vote");
         });
 
@@ -65,7 +65,8 @@ function clickToVote(voteId) {
         },
         dataType: 'json',
         success: function (data) {
-            $(voteId).text(currentVote = data.vote);
+            const v = parseInt($(voteId).text())
+            $(voteId).text(v + data.changes)
         },
         type: 'PUT'
     });
@@ -83,9 +84,9 @@ function getCar(id) {
         },
         dataType: 'json',
         success: function (data) {
-            $('div.divTableCell.divDetail > h4').text(data.carName)
+            $('div.divTableCell.divDetail > h4').text(data.name)
             $('#vote').text(data.vote)
-            $('div.divTableCell.divDetail > img').attr('src', data.carImage)
+            $('div.divTableCell.divDetail > img').attr('src', `http://localhost:3232/images/cars/${data.image}`)
             $('#btnVote').attr('value', data.id)
 
             $('.btnMenuCar').each(function (index) {
@@ -93,8 +94,6 @@ function getCar(id) {
                     $(this).toggleClass('active');
                 else $(this).removeClass('active');
             });
-
-            console.log(data);
         },
         type: 'GET'
     });

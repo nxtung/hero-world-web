@@ -10,12 +10,12 @@ block content
           div.list-group
             each val in itemList
               if val.id == id
-                button.btnMenuCar.list-group-item.list-group-item-action.active(value=val.id, type="button")=val.carName
+                button.btnMenuCar.list-group-item.list-group-item-action.active(value=val.id, type="button")=val.name
               else 
-                button.btnMenuCar.list-group-item.list-group-item-action(value=val.id, type="button")=val.carName
+                button.btnMenuCar.list-group-item.list-group-item-action(value=val.id, type="button")=val.name
         div.divTableCell.divDetail
-          h4=carName
+          h4=name
           div.d-flex.flex-row
             button#btnVote.p-2.btn.btn-outline-primary.btn-sm(type="button", value=id) Vote
             span#vote.p-2=vote
-          img.car-image(src=carImage alt=carName)
+          img.car-image(src=image alt=name)

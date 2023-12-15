@@ -12,8 +12,8 @@ router.get('/', async function (req, res, next) {
       title: '  Dashboard',
       subTitle: 'Dashboard',
       itemList: carList,
-      carImage: carList[0].carImage,
-      carName: carList[0].carName,
+      image: carList[0].image,
+      name: carList[0].name,
       vote: 12
     });
 });
